@@ -5,31 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body>
+<body>    
     <div id="app">
-      <img v-bind:src="srcImg" v-bind:title="titleImg">
-      <hr>
-      <a :href="url">
-          Vue
-      </a>
-      <hr>
-      <p v-text="textPar">
+        <input type="text" v-model="textDigitado" >        
+        <br>
+        {{textDigitado}}
+        <br>
+        <div v-if="textDigitado == 1" >
+            <img v-bind:src="srcImg1" v-bind:title="titleImg">
+        </div>
+        <div v-if="textDigitado == 2">
+            <img v-bind:src="srcImg2" v-bind:title="titleImg">
+        </div>
+        <div v-if="textDigitado == 3">
+            <img v-bind:src="srcImg3" v-bind:title="titleImg">
+        </div>
 
-      </p>
-      <hr>
-      <div v-html="textPar">
-
-      </div>
     </div>
+
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     <script>
         new Vue({
             el:'#app',
             data:{
-                srcImg: 'vuelogo.jpg',
-                titleImg: 'Logo VUe',
-                url: 'http://vuejs.com',
-                textPar: '<b>teste</b> <br> qualquer'
+                textDigitado: '',
+                srcImg1: 'vuelogo1.jpg',
+                srcImg2: 'vuelogo2.jpg',
+                srcImg3: 'vuelogo3.jpg',
+                titleImg: 'Logo VUe'
             } ,                
         })
     </script>    
