@@ -7,7 +7,7 @@
 </head>
 <body>   
     <div id="app">
-        <form v-on:submit ="alterarNome('Andrade', $event)">
+        <form v-on:submit.prevent ="alterarNome('Andrade')">
             <input type="text" v-model="textDigitado" >              
             <button type="submit">
                 Add
@@ -23,7 +23,7 @@
             } ,
             methods: {
                 alterarNome(sobrenome, event){
-                    event.preventDefault();                  
+                              
                     
                     this.textDigitado = sobrenome;
                     
