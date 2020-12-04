@@ -5,19 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body>    
+<body>   
     <div id="app">
-        <input type="text" v-model="textDigitado" >
-        {{textDigitado}}
-        <br>
-        <button @click="alterarNome()">
-            Chamar Altera Nome
-        </button>
-        <br>
-        <label v-text="textDigitado"></label>        
-        </div>
+        <form v-on:submit ="alterarNome('Andrade', $event)">
+            <input type="text" v-model="textDigitado" >              
+            <button type="submit">
+                Add
+            </button>
+        </form>         
     </div>
-
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     <script>
         new Vue({
@@ -26,8 +22,11 @@
                 textDigitado: ''
             } ,
             methods: {
-                alterarNome(){
-                    this.textDigitado = "Andrade";
+                alterarNome(sobrenome, event){
+                    event.preventDefault();                  
+                    
+                    this.textDigitado = sobrenome;
+                    
                 }
             },                
         });
