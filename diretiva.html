@@ -7,18 +7,14 @@
 </head>
 <body>    
     <div id="app">
-        <input type="text" v-model="textDigitado" >        
-        <br>
+        <input type="text" v-model="textDigitado" >
         {{textDigitado}}
         <br>
-        <div v-if="textDigitado == 1" >
-            <img v-bind:src="srcImg1" v-bind:title="titleImg">
-        </div>
-        <div v-else-if="textDigitado == 2">
-            <img v-bind:src="srcImg2" v-bind:title="titleImg">
-        </div>
-        <div v-else>
-            <img v-bind:src="srcImg3" v-bind:title="titleImg">
+        <button v-on:click="alterarNome()">
+            Chamar Altera Nome
+        </button>
+        <br>
+        <label v-text="textDigitado"></label>        
         </div>
     </div>
 
@@ -27,13 +23,14 @@
         new Vue({
             el:'#app',
             data:{
-                textDigitado: '',
-                srcImg1: 'vuelogo1.jpg',
-                srcImg2: 'vuelogo2.jpg',
-                srcImg3: 'vuelogo3.jpg',
-                titleImg: 'Logo VUe'
-            } ,                
-        })
+                textDigitado: ''
+            } ,
+            methods: {
+                alterarNome(){
+                    this.textDigitado = "Andrade";
+                }
+            },                
+        });
     </script>    
 </body>
 </html>
