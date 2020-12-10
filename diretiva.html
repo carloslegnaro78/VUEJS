@@ -27,7 +27,8 @@
 
         <button @click="vermelho()">vermelho</button>
         <button @click="verde()">verde</button>
-
+        <button @click="incolor()">Incolor</button>
+            
         <p v-bind:class="{red: colors.vermelho, green: colors.verde }">
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Saepe, non culpa ducimus quia rerum ullam veritatis perferendis dicta numquam illo adipisci porro itaque est fugiat dolore laborum totam repellendus vitae?
         </p>
@@ -73,6 +74,10 @@
                 verde(){
                     this.colors.vermelho = false;
                     this.colors.verde = true;
+                },
+                incolor() {
+                    this.colors.vermelho = false;
+                    this.colors.verde = false;
                 }
             },
                         
